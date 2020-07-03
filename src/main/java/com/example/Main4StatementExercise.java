@@ -10,8 +10,8 @@ public class Main4StatementExercise {
         Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
         Statement statement = connection.createStatement();
 
-        statement.executeUpdate("CREATE TABLE IF NOT EXISTS user(id BIGINT NOT NULL, username VARCHAR(50), password VARCHAR(50), PRIMARY KEY(id))");
-        int updatedQuantity = statement.executeUpdate("INSERT INTO user VALUES (1, 'Jan', 'password1'), (2, 'Ala', 'password2'), (3, 'Mikołaj', 'passowrd3'), (4, 'Jan', 'password4'), (5, 'Kasia', 'password5'), (6, 'Ola', 'password6')");
+        statement.executeUpdate("CREATE TABLE IF NOT EXISTS user(id BIGINT NOT NULL AUTO_INCREMENT, username VARCHAR(50), password VARCHAR(50), PRIMARY KEY(id))");
+        int updatedQuantity = statement.executeUpdate("INSERT INTO user(username, password) VALUES ('Jan', 'password1'), ('Ala', 'password2'), ('Mikołaj', 'passowrd3'), ('Jan', 'password4'), ('Kasia', 'password5'), ('Ola', 'password6')");
         System.out.println(updatedQuantity);
 
         ResultSet resultSet = statement.executeQuery("SELECT username FROM user");
