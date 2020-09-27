@@ -11,10 +11,10 @@ public class Main6PreparedStatementExercise {
         Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 
         Statement deleteStatement = connection.createStatement();
-        deleteStatement.executeUpdate("DELETE FROM user");
+        deleteStatement.execute("TRUNCATE TABLE user");
         deleteStatement.close();
 
-        List<String> names = List.of("Jan", "Ala", "Mikołaj", "Jan", "Kasia");
+        List<String> names = List.of("Jan", "Ala", "Mikołaj", "Alicja", "Kasia");
         List<String> passwords = List.of("password1", "password2", "password3", "password4", "password5", "password6");
 
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO user(username, password) VALUE(?, ?)");
