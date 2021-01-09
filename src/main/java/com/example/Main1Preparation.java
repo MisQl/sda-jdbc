@@ -10,6 +10,7 @@ public class Main1Preparation {
         1.  Przygotowanie bazy danych:
 
             CREATE SCHEMA jdbc_schema;
+            USE jdbc_schema;
             CREATE TABLE animal(id BIGINT NOT NULL, name VARCHAR(50), age INT, PRIMARY KEY (id));
             INSERT INTO animal VALUES (1, 'Reksio', 5), (2, 'Mruczek', 4), (3, 'Benio', 10);
 
@@ -27,7 +28,7 @@ public class Main1Preparation {
             long id = resultSet.getLong(1);
             String name = resultSet.getString(2);
             int age = resultSet.getInt(3);
-            System.out.println(String.format("Id: %s Name: %s, Age: %s", id, name, age));
+            System.out.printf("Id: %s Name: %s, Age: %s\n", id, name, age);
         }
 
         statement.close();

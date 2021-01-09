@@ -23,7 +23,7 @@ public class Main3Statement {
         selectStatement.close();
 
         Statement truncateStatement = connection.createStatement();
-        boolean hasResult = truncateStatement.execute("TRUNCATE TABLE animal");                          // execute możemy stosować do wszystkich typów zapytań
+        boolean hasResult = truncateStatement.execute("TRUNCATE TABLE animal");                         // execute możemy stosować do wszystkich typów zapytań
         System.out.println(hasResult);                                                                  // jeśli zapytanie będzie typu SELECT zwróci true
         truncateStatement.close();                                                                      // dla TRUNCATE zwróci false
 
