@@ -18,7 +18,7 @@ public class Main6PreparedStatementExercise {
         List<String> passwords = List.of("password1", "password2", "password3", "password4", "password5", "password6");
 
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO user(username, password) VALUE(?, ?)");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < names.size(); i++) {
             preparedStatement.setString(1, names.get(i));           // 1 oznacza pierwszy znak zapytania w kwerendzie
             preparedStatement.setString(2, passwords.get(i));       // 2 oznacza drugi znak zapytania w kwerendzie
             preparedStatement.executeUpdate();
